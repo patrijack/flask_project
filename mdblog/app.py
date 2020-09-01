@@ -4,10 +4,18 @@ from flask import render_template
 flask_app = Flask(__name__)
 
 @flask_app.route("/")
-def index():
-	return render_template("index.jinja")
+def view_home():
+	return render_template("home.jinja")
 
-@flask_app.route("/about")
-def about():
+@flask_app.route("/about/")
+def view_about():
 	return render_template("about.jinja")
+
+@flask_app.route("/articles/")
+def view_articles():
+	return render_template("articles.jinja")
+
+@flask_app.route("/admin/")
+def view_admin():
+	return render_template("admin.jinja")
 
